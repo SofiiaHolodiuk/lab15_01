@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 1</title>
+    <script>
+        function processString() {
+            // Отримуємо значення з input
+            let inputString = document.getElementById('inputString').value;
+            let modifiedString = '';
+            let acCount = 0;
+
+            // Додаємо по дві цифри після кожної цифри
+            for (let i = 0; i < inputString.length; i++) {
+                let currentChar = inputString[i];
+                modifiedString += currentChar + currentChar;
+            }
+
+            // Підраховуємо кількість пар 'AC'
+            for (let i = 0; i < modifiedString.length - 1; i++) {
+                if (modifiedString[i] === 'A' && modifiedString[i + 1] === 'C') {
+                    acCount++;
+                }
+            }
+
+            // Виводимо результат
+            document.getElementById('result').innerText = `Модифікований рядок: ${modifiedString} \nКількість пар 'AC': ${acCount}`;
+        }
+    </script>
+</head>
+<body>
+    <h1>Завдання 1</h1>
+    <label for="inputString">Введіть рядок: </label>
+    <input type="text" id="inputString">
+    <button onclick="processString()">Обробити</button>
+    <pre id="result"></pre>
+</body>
+</html>
