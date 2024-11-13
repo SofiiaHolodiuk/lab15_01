@@ -14,7 +14,11 @@
             // Додаємо по дві цифри після кожної цифри
             for (let i = 0; i < inputString.length; i++) {
                 let currentChar = inputString[i];
-                modifiedString += currentChar + currentChar;
+                if (/\d/.test(currentChar)) { // Перевірка, чи символ є цифрою
+                    modifiedString += currentChar + currentChar;
+                } else {
+                    modifiedString += currentChar;
+                }
             }
 
             // Підраховуємо кількість пар 'AC'
